@@ -4,11 +4,10 @@ import (
 	"fmt"
 )
 
-func main() {
-	b := []byte{72, 73}
-	fmt.Println(b)
-	fmt.Println(string(b))
+func add(x int, y int) {
+	fmt.Println(x + y)
+}
 
-	c := []byte("HI")
-	fmt.Println(c)
+func main() {
+	add(10, 20)
 }
