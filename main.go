@@ -17,4 +17,13 @@ func main() {
 
 	r3 := cal(100, 2)
 	fmt.Println(r3)
+
+	f := func(x int) {
+		fmt.Println("inner func", x)
+	}
+	f(1)
+
+	func(x int) {
+		fmt.Println("inner func", x)
+	}(1)
 }
