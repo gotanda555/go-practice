@@ -1,13 +1,12 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func add(x int, y int) {
-	fmt.Println(x + y)
+func add(x, y int) int {
+	return x + y
 }
 
 func main() {
-	add(10, 20)
+	r := add(10, 20)
+	fmt.Println(r)
 }
