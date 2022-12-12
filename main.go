@@ -2,29 +2,35 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"os"
 )
 
-func getOsName() string {
-	return "asasasasa"
+func foo() {
+	defer fmt.Println("world foo")
+
+	fmt.Println("hello foo")
 }
 
 func main() {
-	switch os := getOsName(); os {
-	case "mac":
-		fmt.Println("Mac!!")
-	case "windoes":
-		fmt.Println("Windows!!")
-	default:
-		fmt.Println("Default!!", os)
-	}
+	/*
+		defer fmt.Println("world")
 
-	t := time.Now()
-	fmt.Println(t.Hour())
-	switch {
-	case t.Hour() < 12:
-		fmt.Println("Morning")
-	case t.Hour() < 17:
-		fmt.Println("Afternoon")
-	}
+		foo()
+
+		fmt.Println("hello")
+	*/
+
+	/*
+		fmt.Println("run")
+		defer fmt.Println(1)
+		defer fmt.Println(2)
+		defer fmt.Println(3)
+		fmt.Println("success")
+	*/
+
+	file, _ := os.Open("./main.go")
+	defer file.Close()
+	data := make([]byte, 100)
+	file.Read(data)
+	fmt.Println(string(data))
 }
